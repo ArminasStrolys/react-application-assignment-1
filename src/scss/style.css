@@ -1,5 +1,51 @@
 body {
-  margin: 5%;
+  margin: 50px;
   background-color: #e0ffe0;
+}
+
+.main-nav {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+
+.search-bar {
+  float: left;
+  width: 100%;
+}
+
+.search-bar input {
+  border-style: none;
+  width: 400px;
+  height: 30px;
+  font-size: 20px;
+  padding: 5px 5px 5px 15px;
+  background-color: gray;
+  color: white;
+  float: left;
+}
+
+.search-bar button {
+  margin-top: 60px;
+  border-radius: 10px;
+  border-style: none;
+  width: 80px;
+  height: 30px;
+  background-color: #8bff8b;
+  color: black;
+  float: left;
+  position: absolute;
+}
+
+.search-bar .button1 {
+  left: 0;
+}
+
+.search-bar .button2 {
+  left: 100px;
+}
+
+.search-bar .button3 {
+  right: 0;
 }
 /*# sourceMappingURL=style.css.map */
