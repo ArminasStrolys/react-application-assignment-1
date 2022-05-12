@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "ACEA,AAAA,IAAI,CAAA;EACA,MAAM,EAAE,EAAE;EACV,gBAAgB,ECJD,OAAkB;CDKpC",
+    "sources": [
+        "style.scss",
+        "_body.scss",
+        "_var.scss",
+        "_navi.scss",
+        "_var.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
