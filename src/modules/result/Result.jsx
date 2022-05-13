@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Result = () => {
+const Result = (props) => {
     return (
         <div className='result'>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate laboriosam ut, voluptates nobis similique ex cum iure quia delectus aut!
+            {props.name}
             <br />
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium culpa, hic voluptatibus commodi non minus!
+            Region: {props.region}
             <br />
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum vitae corporis praesentium id aliquid similique molestias porro!
+            Size of a country: {props.size} m<sup>2</sup>
         </div>
     );
 }
