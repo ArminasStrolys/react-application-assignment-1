@@ -1,12 +1,11 @@
 import Navi from "../navi/Navi"
-import List from "../list/List";
-import "./App.css";
+import Results from "../results/Results";
 
 function App() {
   return (
     <div className="App">
       <Navi />
-      <List />
+      <Results />
     </div>
   );
 }
