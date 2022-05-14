@@ -7,7 +7,7 @@ const Result = (props) => {
             <br />
             Region: {props.region}
             <br />
-            Size of a country: {props.size} m<sup>2</sup>
+            Size of a country: {props.size ? props.size + `${' m\u00B2'}` : 'no official data'} 
         </div>
     );
 }
