@@ -29,6 +29,7 @@
     color: $black;
     float: left;
     position: absolute;
+    box-sizing: content-box;
   }
   .button1 {
     left: 0;
