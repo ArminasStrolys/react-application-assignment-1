@@ -31,8 +31,6 @@ const Results = () => {
         size={country.area}
             />
         ))}
-            <Result />
-            <Result />
         </div>
     );
 }
