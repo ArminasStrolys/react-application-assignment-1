@@ -1,4 +1,4 @@
-import Navi from "../navi/Navi"
+import Navi from "../navi/Navi";
 import Results from "../results/Results";
 
 function App() {
