@@ -12,14 +12,6 @@ const Results = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  //   setCountry(data)
-
-  //   {book.map((e) => (
-  //     <Books
-  //       key={e.id}
-  //     />
-  //   ))}
-
   return (
     <div>
       {countries.map((country, index) => (
