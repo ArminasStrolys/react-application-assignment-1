@@ -5,9 +5,9 @@ const Navi = () => {
     <div className="main-nav">
       <form className="search-bar">
         <input type="text" placeholder="Search..." />
-        <button className="button1">{`\u25B2`}ASCENDING</button>
-        <button className="button2">{`\u25BC`}DECENDING</button>
-        <button className="button3">Oceania only</button>
+        <button className="button1">Oceania only</button>
+        <button className="button2">Smaller than LTU</button>
+        <button className="button3">{`\u25B2`}ASC {`\u25BC`}DEC</button>
       </form>
     </div>
   );
