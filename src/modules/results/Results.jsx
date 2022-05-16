@@ -14,7 +14,17 @@ const Results = () => {
 
   return (
     <div>
+          {/* {countries.filter((a,b)=>console.log(a))} */}
+      {/* {countries.map((country, index) => (
+        <Result
+          key={index}
+          name={country.name}
+          region={country.region}
+          size={country.area}
+        />
+      ))} */}
       {countries.map((country, index) => (
+        country.region === 'Oceania' && 
         <Result
           key={index}
           name={country.name}
@@ -22,6 +32,7 @@ const Results = () => {
           size={country.area}
         />
       ))}
+
     </div>
   );
 };
