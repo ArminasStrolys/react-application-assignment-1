@@ -1,26 +1,29 @@
-import React, { useState } from 'react';
-import Results from '../results/Results';
+import React, { useState } from "react";
+import Results from "../results/Results";
 
 const Navi = () => {
+  const [filterBool, setFilterBool] = useState(false);
 
-  const [oceaniaFilter, setOceaniaFilter] = useState(false);
-
-  const handleOceania = (e) => {
-    e.preventDefault()
-    oceaniaFilter === true ? setOceaniaFilter(false) : setOceaniaFilter(true)
-    console.log(oceaniaFilter);
+  const handleAscDsc = (e) => {
+    e.preventDefault();
+    filterBool === true ? setFilterBool(false) : setFilterBool(true);
+    console.log(filterBool);
   };
 
   return (
-    <div className="main-nav">
-      <form className="search-bar">
-        <input type="text" placeholder="Search..."/>
-        <button className="button1" onClick={handleOceania}>Oceania only</button>
-        <button className="button2">Smaller than LTU</button>
-        <button className="button3">{`\u25B2`}ASC {`\u25BC`}DEC</button>
-        {<Results oceania={oceaniaFilter}/>}
-      </form>
-    </div>
+    <>
+      <div className="main-nav">
+        <form className="search-bar">
+          <input type="text" placeholder="Should this be search...?" />
+          <button className="button1">Oceania only</button>
+          <button className="button2">Smaller than LTU</button>
+          <button className="button3" onClick={handleAscDsc}>
+            {`\u25B2`}ASC {`\u25BC`}DSC
+          </button>
+        </form>
+      </div>
+      {<Results ascDsc={filterBool} />}
+    </>
   );
 };
 

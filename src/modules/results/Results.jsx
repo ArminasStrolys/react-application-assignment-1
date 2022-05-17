@@ -1,11 +1,9 @@
 import React from "react";
 import Result from "../result/Result";
-import Navi from "../navi/Navi";
 import { useState, useEffect } from "react";
 
 const Results = (props) => {
   const [countries, setCountries] = useState([]);
-  const [sorting, setSorting] = useState(false)
 
   useEffect(() => {
     fetch("https://restcountries.com/v2/all?fields=name,region,area")
@@ -15,26 +13,9 @@ const Results = (props) => {
   }, []);
 
   return (
-    <div>
-    {/* {sorting === false ? (countries.map((country, index) => (
-        countries.sort((a, b) => b.name.localeCompare(a.name)) &&
-        <Result
-          key={index}
-          name={country.name}
-          region={country.region}
-          size={country.area}
-        />
-      ))) : (countries.map((country, index) => (
-        countries.sort((a, b) => a.name.localeCompare(b.name)) &&
-        <Result
-          key={index}
-          name={country.name}
-          region={country.region}
-          size={country.area}
-        />
-      )))} */}
+    <div className="results">
       {(countries.map((country, index) => (
-        props.oceania === false ? 
+        props.ascDsc === false ? 
         countries.sort((a, b) => a.name.localeCompare(b.name)) :
         countries.sort((a, b) => b.name.localeCompare(a.name)),
         <Result
