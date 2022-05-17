@@ -30,6 +30,7 @@
     float: left;
     position: absolute;
     box-sizing: content-box;
+    transition: 0.4s;
   }
   .button1 {
     left: 0;
@@ -39,5 +40,9 @@
   }
   .button3 {
     right: 0;
+  }
+  button:hover{
+    cursor: pointer;
+    background-color: $mainSecondaryColor;
   }
 }
