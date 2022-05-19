@@ -54,6 +54,7 @@ const Results = (props) => {
 
 
 
+
       {countries.map(
         (country, index) => (
           props.ascDsc === false
@@ -66,15 +67,35 @@ const Results = (props) => {
               region={country.region}
               size={country.area}
             />
-          ),
-          props.ocea === true ?
-        country.region === "Oceania" && (
+          ) &&
+
+          props.ltu === true ? (
+            country.area <= 65300 && (
+              <Result
+                key={index}
+                name={country.name}
+                region={country.region}
+                size={country.area}
+              />
+            )
+          ) : (
             <Result
               key={index}
               name={country.name}
               region={country.region}
               size={country.area}
             />
+          ) &&
+
+          props.ocea === true ? (
+            country.region === "Oceania" && (
+              <Result
+                key={index}
+                name={country.name}
+                region={country.region}
+                size={country.area}
+              />
+            )
           ) : (
             <Result
               key={index}
@@ -83,9 +104,13 @@ const Results = (props) => {
               size={country.area}
             />
           )
-
         )
       )}
+
+
+
+
+
 
       {/* {countries.map((country, index) =>
         props.ocea === false ? (
@@ -106,13 +131,6 @@ const Results = (props) => {
           )
         )
       )} */}
-
-
-
-
-
-
-
 
       {/* {countries.map((country, index) => (
         country.region === 'Oceania' && 

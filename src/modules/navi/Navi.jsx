@@ -4,6 +4,7 @@ import Results from "../results/Results";
 const Navi = () => {
   const [filterBool, setFilterBool] = useState(false);
   const [ocea, setOcea] = useState(false);
+  const [larger, setLarger] = useState(false)
 
   const handleAscDsc = (e) => {
     e.preventDefault();
@@ -15,6 +16,11 @@ const Navi = () => {
     ocea === true ? setOcea(false) : setOcea(true);
     console.log(ocea);
   };
+  const handleLtu = (e) => {
+    e.preventDefault();
+    larger === true ? setLarger(false) : setLarger(true);
+    console.log(larger);
+  };
 
   return (
     <>
@@ -22,13 +28,13 @@ const Navi = () => {
         <form className="search-bar">
           <input type="text" placeholder="Should this be search...?" />
           <button className="button1" onClick={handleOcean}>Oceania only</button>
-          <button className="button2">Smaller than LTU</button>
+          <button className="button2" onClick={handleLtu}>Smaller than LTU</button>
           <button className="button3" onClick={handleAscDsc}>
             {`\u25B2`}ASC {`\u25BC`}DSC
           </button>
         </form>
       </div>
-      {<Results ascDsc={filterBool} ocea={ocea} />}
+      {<Results ascDsc={filterBool} ocea={ocea} ltu={larger} />}
     </>
   );
 };
