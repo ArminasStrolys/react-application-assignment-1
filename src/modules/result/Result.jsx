@@ -3,8 +3,7 @@ import React from "react";
 const Result = (props) => {
   return (
     <div className="result">
-      {props.name}
-      <br />
+      <div className="bolder">{props.name}</div>
       Region: {props.region}
       <br />
       Size of a country:{" "}
