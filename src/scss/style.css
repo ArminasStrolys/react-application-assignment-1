@@ -36,7 +36,7 @@ body {
   float: left;
   position: absolute;
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 .search-bar .button1 {

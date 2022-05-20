@@ -27,13 +27,22 @@ const Navi = () => {
       <div className="main-nav">
         <form className="search-bar">
           <input type="text" placeholder="Should this be search...?" />
-          <button className={ocea === false ? "button1" : "button1active"} onClick={handleOcean}>
+          <button
+            className={ocea === false ? "button1" : "button1active"}
+            onClick={handleOcean}
+          >
             Oceania only
           </button>
-          <button className={larger === false ? "button2" : "button2active"} onClick={handleLtu}>
+          <button
+            className={larger === false ? "button2" : "button2active"}
+            onClick={handleLtu}
+          >
             Smaller than LTU
           </button>
-          <button className={filterBool === false ? "button3" : "button3active"} onClick={handleAscDsc}>
+          <button
+            className={filterBool === false ? "button3" : "button3active"}
+            onClick={handleAscDsc}
+          >
             {`\u25B2`}ASC {`\u25BC`}DSC
           </button>
         </form>
