@@ -14,47 +14,6 @@ const Results = (props) => {
 
   return (
     <div className="results">
-      {/* {countries.map(
-        (country, index) => (
-          props.ascDsc === false
-            ? countries.sort((a, b) => a.name.localeCompare(b.name))
-            : countries.sort((a, b) => b.name.localeCompare(a.name)),
-          (
-            <Result
-              key={index}
-              name={country.name}
-              region={country.region}
-              size={country.area}
-            />
-          )
-        )
-      )}
-
-      {countries.map((country, index) =>
-        props.ocea === false ? (
-          <Result
-            key={index}
-            name={country.name}
-            region={country.region}
-            size={country.area}
-          />
-        ) : (
-          country.region === "Oceania" && (
-            <Result
-              key={index}
-              name={country.name}
-              region={country.region}
-              size={country.area}
-            />
-          )
-        )
-      )} */}
-
-
-
-
-
-
       {countries.map(
         (country, index) => (
           props.ascDsc === false
@@ -67,28 +26,23 @@ const Results = (props) => {
               region={country.region}
               size={country.area}
             />
-          ) &&
-
-          props.ltu === true ? (
-            country.area <= 65300 && 
+          ) && props.ltu === true ? (
+            country.area <= 65300 && (
               <Result
                 key={index}
                 name={country.name}
                 region={country.region}
                 size={country.area}
               />
+            )
           ) : (
-            <Result
-              key={index}
-              name={country.name}
-              region={country.region}
-              size={country.area}
-            />
-          )
-
-          &&
-
-          props.ocea === true ? (
+              <Result
+                key={index}
+                name={country.name}
+                region={country.region}
+                size={country.area}
+              />
+            ) && props.ocea === true ? (
             country.region === "Oceania" && (
               <Result
                 key={index}
@@ -105,62 +59,8 @@ const Results = (props) => {
               size={country.area}
             />
           )
-
         )
       )}
-
-
-
-
-
-
-      {/* {countries.map((country, index) =>
-        props.ocea === false ? (
-          <Result
-            key={index}
-            name={country.name}
-            region={country.region}
-            size={country.area}
-          />
-        ) : (
-          country.region === "Oceania" && (
-            <Result
-              key={index}
-              name={country.name}
-              region={country.region}
-              size={country.area}
-            />
-          )
-        )
-      )} */}
-
-      {/* {countries.map((country, index) => (
-        country.region === 'Oceania' && 
-        <Result
-          key={index}
-          name={country.name}
-          region={country.region}
-          size={country.area}
-        />
-      ))} */}
-      {/* {countries.map((country, index) => (
-        country.area <= 65300 && 
-        <Result
-          key={index}
-          name={country.name}
-          region={country.region}
-          size={country.area}
-        />
-      ))} */}
-      {/* {countries.map((country, index) => (
-        country.area <= 65300 && 
-        <Result
-          key={index}
-          name={country.name}
-          region={country.region}
-          size={country.area}
-        />
-      ))} */}
     </div>
   );
 };
