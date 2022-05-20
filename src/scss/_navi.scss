@@ -35,13 +35,25 @@
   .button1 {
     left: 0;
   }
+  .button1active {
+    left: 0;
+    background-color: $active;
+  }
   .button2 {
     left: 100px;
+  }
+  .button2active {
+    left: 100px;
+    background-color: $active;
   }
   .button3 {
     right: 0;
   }
-  button:hover{
+  .button3active {
+    right: 0;
+    background-color: $active;
+  }
+  button:hover {
     cursor: pointer;
     background-color: $mainSecondaryColor;
   }

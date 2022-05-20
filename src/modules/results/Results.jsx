@@ -70,14 +70,13 @@ const Results = (props) => {
           ) &&
 
           props.ltu === true ? (
-            country.area <= 65300 && (
+            country.area <= 65300 && 
               <Result
                 key={index}
                 name={country.name}
                 region={country.region}
                 size={country.area}
               />
-            )
           ) : (
             <Result
               key={index}
@@ -85,7 +84,9 @@ const Results = (props) => {
               region={country.region}
               size={country.area}
             />
-          ) &&
+          )
+
+          &&
 
           props.ocea === true ? (
             country.region === "Oceania" && (
@@ -104,6 +105,7 @@ const Results = (props) => {
               size={country.area}
             />
           )
+
         )
       )}
 
