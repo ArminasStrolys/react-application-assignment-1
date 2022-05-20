@@ -27,7 +27,25 @@ const Results = (props) => {
               size={country.area}
             />
           ) && props.ltu === true ? (
-            country.area <= 65300 && (
+            (country.area >= 65300 && (
+              <Result
+                key={index}
+                name={country.name}
+                region={country.region}
+                size={country.area}
+              />
+            )) ||
+            (props.ltu === true && props.ocea === true) ? (
+              country.region === "Oceania" &&
+              country.area <= 65300 && (
+                <Result
+                  key={index}
+                  name={country.name}
+                  region={country.region}
+                  size={country.area}
+                />
+              )
+            ) : (
               <Result
                 key={index}
                 name={country.name}
@@ -35,14 +53,7 @@ const Results = (props) => {
                 size={country.area}
               />
             )
-          ) : (
-              <Result
-                key={index}
-                name={country.name}
-                region={country.region}
-                size={country.area}
-              />
-            ) && props.ocea === true ? (
+          ) : props.ocea === true ? (
             country.region === "Oceania" && (
               <Result
                 key={index}
