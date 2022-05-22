@@ -26,7 +26,7 @@ const Navi = () => {
     <>
       <div className="main-nav">
         <form className="search-bar">
-          <input type="text" placeholder="Should this be search...?" />
+          <input type="text" />
           <button
             className={ocea === false ? "button1" : "button1active"}
             onClick={handleOcean}

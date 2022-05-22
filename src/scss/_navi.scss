@@ -7,7 +7,6 @@
 }
 .search-bar {
   float: left;
-  width: 100%;
   input {
     border-style: none;
     width: 400px;
@@ -57,4 +56,11 @@
     cursor: pointer;
     background-color: $mainSecondaryColor;
   }
+}
+@media screen and (max-width: 600px) {
+  .search-bar {
+    input {
+      width: 332px;
+    }
+}
 }
