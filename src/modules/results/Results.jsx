@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const Results = (props) => {
   const [countries, setCountries] = useState([]);
+  //pagination
 
   useEffect(() => {
     fetch("https://restcountries.com/v2/all?fields=name,region,area")
