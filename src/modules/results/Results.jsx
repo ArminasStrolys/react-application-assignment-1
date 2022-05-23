@@ -79,6 +79,8 @@ const Results = (props) => {
           )
         )
       )}
+      <Pagination postsPerPage={postsPerPage} totalPosts={countries.length}/>
+
     </div>
   );
 };
