@@ -1,10 +1,16 @@
 import React from "react";
 import Result from "../result/Result";
 import { useState, useEffect } from "react";
+import { Pagination } from "../pagination/Pagination";
 
 const Results = (props) => {
   const [countries, setCountries] = useState([]);
-  //pagination
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage, setPostsPerPage] = useState(10)
+
+  const indexOfLastPost = currentPage * postsPerPage
+  const indexOfFirstPost = indexOfLastPost - postsPerPage
+  const currentPosts = countries.slice(indexOfFirstPost, indexOfLastPost)
 
   useEffect(() => {
     fetch("https://restcountries.com/v2/all?fields=name,region,area")
@@ -15,7 +21,7 @@ const Results = (props) => {
 
   return (
     <div className="results">
-      {countries.map(
+      {currentPosts.map(
         (country, index) => (
           props.ascDsc === false
             ? countries.sort((a, b) => a.name.localeCompare(b.name))
