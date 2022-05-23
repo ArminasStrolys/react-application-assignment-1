@@ -1,10 +1,22 @@
 @import "./_var.scss";
 
-.pagerMain{
-    .pagerMini{
-        display: inline;
-        float: left;
-        padding: 10px;
-        
-    }
+.pagerMain {
+  text-decoration: none;
+  float: left;
+  padding-left: 0;
+  .pagerMini {
+    display: inline;
+    padding: 5px;
+  }
+  .pageLink {
+      text-decoration: none;
+      border: 1px solid $gray;
+      padding: 5px;
+  } .pageLink:visited{
+      color: $gray;
+  } .pageLink:hover{
+    color: $black;
+  } .pageLink:active{
+      color: $active;
+  }
 }
