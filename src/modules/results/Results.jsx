@@ -5,13 +5,13 @@ import { Pagination } from "../pagination/Pagination";
 
 const Results = (props) => {
   const [countries, setCountries] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(10)
-  const paginate = (pageNumbers) => setCurrentPage(pageNumbers)
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
 
-  const indexOfLastPost = currentPage * postsPerPage
-  const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const currentPosts = countries.slice(indexOfFirstPost, indexOfLastPost)
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = countries.slice(indexOfFirstPost, indexOfLastPost);
+  const paginate = (pageNumbers) => setCurrentPage(pageNumbers);
 
   useEffect(() => {
     fetch("https://restcountries.com/v2/all?fields=name,region,area")
@@ -80,8 +80,11 @@ const Results = (props) => {
           )
         )
       )}
-      <Pagination postsPerPage={postsPerPage} totalPosts={countries.length} paginate={paginate}/>
-
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={countries.length}
+        paginate={paginate}
+      />
     </div>
   );
 };
