@@ -16,7 +16,9 @@
       color: $gray;
   } .pageLink:hover{
     color: $black;
+    background-color: $lightGray;
   } .pageLink:active{
       color: $active;
+
   }
 }

@@ -6,7 +6,8 @@ import { Pagination } from "../pagination/Pagination";
 const Results = (props) => {
   const [countries, setCountries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage, setPostsPerPage] = useState(10)
+  const [postsPerPage] = useState(10)
+  const paginate = (pageNumbers) => setCurrentPage(pageNumbers)
 
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
@@ -79,7 +80,7 @@ const Results = (props) => {
           )
         )
       )}
-      <Pagination postsPerPage={postsPerPage} totalPosts={countries.length}/>
+      <Pagination postsPerPage={postsPerPage} totalPosts={countries.length} paginate={paginate}/>
 
     </div>
   );
