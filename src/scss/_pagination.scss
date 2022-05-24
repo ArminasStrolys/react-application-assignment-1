@@ -1,24 +1,30 @@
 @import "./_var.scss";
 
 .pagerMain {
-  text-decoration: none;
   float: left;
   padding-left: 0;
   .pagerMini {
-    display: inline;
-    padding: 5px;
+    display: inline-block;
+    padding: 10px 5px;
   }
   .pageLink {
-      text-decoration: none;
-      border: 1px solid $gray;
-      padding: 5px;
-  } .pageLink:visited{
-      color: $gray;
-  } .pageLink:hover{
+    text-decoration: none;
+    border: 1px solid $gray;
+    // padding: 5px;
+    width: 25px;
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+  }
+  .pageLink:visited {
+    color: $gray;
+  }
+  .pageLink:hover {
     color: $black;
     background-color: $lightGray;
-  } .pageLink:active{
-      color: $active;
-
+  }
+  .pageLink:active {
+    color: $active;
   }
 }
