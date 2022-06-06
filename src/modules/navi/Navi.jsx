@@ -9,17 +9,14 @@ const Navi = () => {
   const handleAscDsc = (e) => {
     e.preventDefault();
     filterBool === true ? setFilterBool(false) : setFilterBool(true);
-    console.log(filterBool);
   };
   const handleOcean = (e) => {
     e.preventDefault();
     ocea === true ? setOcea(false) : setOcea(true);
-    console.log(ocea);
   };
   const handleLtu = (e) => {
     e.preventDefault();
     larger === true ? setLarger(false) : setLarger(true);
-    console.log(larger);
   };
 
   return (

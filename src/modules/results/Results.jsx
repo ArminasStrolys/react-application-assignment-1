@@ -36,21 +36,6 @@ const Results = (props) => {
 
   return (
     <div className="results">
-      {/* {currentPosts.map(
-        (country, index) => (
-          props.ascDsc === false
-            ? countries.sort((a, b) => a.name.localeCompare(b.name))
-            : countries.sort((a, b) => b.name.localeCompare(a.name)),
-          (
-            <Result
-              key={index}
-              name={country.name}
-              region={country.region}
-              size={country.area}
-            />
-          )
-        )
-      )} */}
 
       {props.ocea === true && props.ltu === true
         ? currentPostsC.map(
@@ -146,5 +131,3 @@ const Results = (props) => {
 };
 
 export default Results;
-
-// LTU size 65300
