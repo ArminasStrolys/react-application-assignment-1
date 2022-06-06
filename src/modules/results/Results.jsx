@@ -8,9 +8,19 @@ const Results = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
 
+  let a = [];
+  let b = [];
+  let c = [];
+  a = countries.filter((country) => country.region === "Oceania");
+  b = countries.filter((country) => country.area <= 65300);
+  c = b.filter((country) => country.region === "Oceania");
+
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = countries.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPostsA = a.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPostsB = b.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPostsC = c.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = (pageNumbers) => setCurrentPage(pageNumbers);
 
   useEffect(() => {
@@ -20,9 +30,13 @@ const Results = (props) => {
       .catch((error) => console.log(error));
   }, []);
 
+  console.log(a.sort((a, b) => a.name.localeCompare(b.name)));
+  console.log(countries.sort((a, b) => a.name.localeCompare(b.name)));
+  console.log(countries.sort((a, b) => b.name.localeCompare(a.name)));
+
   return (
     <div className="results">
-      {currentPosts.map(
+      {/* {currentPosts.map(
         (country, index) => (
           props.ascDsc === false
             ? countries.sort((a, b) => a.name.localeCompare(b.name))
@@ -34,18 +48,17 @@ const Results = (props) => {
               region={country.region}
               size={country.area}
             />
-          ) && props.ltu === true ? (
-            (country.area >= 65300 && (
-              <Result
-                key={index}
-                name={country.name}
-                region={country.region}
-                size={country.area}
-              />
-            )) ||
-            (props.ltu === true && props.ocea === true) ? (
-              country.region === "Oceania" &&
-              country.area <= 65300 && (
+          )
+        )
+      )} */}
+
+      {props.ocea === true && props.ltu === true
+        ? currentPostsC.map(
+            (country, index) => (
+              props.ascDsc === false
+                ? countries.sort((a, b) => a.name.localeCompare(b.name))
+                : countries.sort((a, b) => b.name.localeCompare(a.name)),
+              (
                 <Result
                   key={index}
                   name={country.name}
@@ -53,38 +66,81 @@ const Results = (props) => {
                   size={country.area}
                 />
               )
-            ) : (
-              <Result
-                key={index}
-                name={country.name}
-                region={country.region}
-                size={country.area}
-              />
             )
-          ) : props.ocea === true ? (
-            country.region === "Oceania" && (
-              <Result
-                key={index}
-                name={country.name}
-                region={country.region}
-                size={country.area}
-              />
-            )
-          ) : (
-            <Result
-              key={index}
-              name={country.name}
-              region={country.region}
-              size={country.area}
-            />
           )
-        )
+        : props.ltu === true
+        ? currentPostsB.map(
+            (country, index) => (
+              props.ascDsc === false
+                ? countries.sort((a, b) => a.name.localeCompare(b.name))
+                : countries.sort((a, b) => b.name.localeCompare(a.name)),
+              (
+                <Result
+                  key={index}
+                  name={country.name}
+                  region={country.region}
+                  size={country.area}
+                />
+              )
+            )
+          )
+        : props.ocea === true
+        ? currentPostsA.map(
+            (country, index) => (
+              props.ascDsc === false
+                ? countries.sort((a, b) => a.name.localeCompare(b.name))
+                : countries.sort((a, b) => b.name.localeCompare(a.name)),
+              (
+                <Result
+                  key={index}
+                  name={country.name}
+                  region={country.region}
+                  size={country.area}
+                />
+              )
+            )
+          )
+        : currentPosts.map(
+            (country, index) => (
+              props.ascDsc === false
+                ? countries.sort((a, b) => a.name.localeCompare(b.name))
+                : countries.sort((a, b) => b.name.localeCompare(a.name)),
+              (
+                <Result
+                  key={index}
+                  name={country.name}
+                  region={country.region}
+                  size={country.area}
+                />
+              )
+            )
+          )}
+
+      {props.ocea === true ? (
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={a.length}
+          paginate={paginate}
+        />
+      ) : props.ltu === true ? (
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={b.length}
+          paginate={paginate}
+        />
+      ) : props.ocea === true && props.ltu === true ? (
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={c.length}
+          paginate={paginate}
+        />
+      ) : (
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={countries.length}
+          paginate={paginate}
+        />
       )}
-      <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={countries.length}
-        paginate={paginate}
-      />
     </div>
   );
 };
