@@ -30,10 +30,6 @@ const Results = (props) => {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(a.sort((a, b) => a.name.localeCompare(b.name)));
-  console.log(countries.sort((a, b) => a.name.localeCompare(b.name)));
-  console.log(countries.sort((a, b) => b.name.localeCompare(a.name)));
-
   return (
     <div className="results">
 
